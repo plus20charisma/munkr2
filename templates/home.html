@@ -1,0 +1,28 @@
+<div ng-repeat="post in posts | orderBy:'-upvotes'">
+<div>
+    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
+    <span class="user-post-score">{{post.upvotes}}</span>
+    <span class="user-post">
+        <a ng-show="post.link" href="{{post.link}}">
+            {{post.title}}
+        </a>
+        <span ng-hide="post.link">
+            {{post.title}}
+        </span>
+        <span>
+            <a ng-href="#/post/{{posts.indexOf(post)}}">{{post.comments.length}} Comments</a>
+        </span>
+    </span>
+</div>
+</div>
+
+<form ng-submit="addPost()" class="top-pad">
+    <h3>Add New Post</h3>
+    <div class="form-group">
+        <input type="text" placeholder="Title" ng-model="title" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Link" ng-model="link" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Post</button>
+</form>
