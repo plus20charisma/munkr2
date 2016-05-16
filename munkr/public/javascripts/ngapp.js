@@ -5,13 +5,13 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
   $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: '/templates/home.html',
+        templateUrl: 'templates/home.ejs',
         controller: 'MainCtrl'
       })
 
       .state('posts', {
         url: '/post/:id',
-        templateUrl: '/templates/post.html',
+        templateUrl: 'templates/post.ejs',
         controller: 'PostsCtrl'
       });
 
